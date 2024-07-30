@@ -213,3 +213,6 @@ POST http://localhost:5002/users/login (en Headers agregar orig(key) postman(val
 GET http://localhost:5002/users - name: GET All Users
 GET http://localhost:5002/users/ID - name: GET One User
 
+CREATE TICKET
+-------------
+POST http://localhost:5002/api/tickets/purchase - name POST Create Ticket
