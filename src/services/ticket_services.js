@@ -33,7 +33,8 @@ export default class TicketService extends Services {
             productsOutOfCart.push(product.id);
           }
         }
-      }
+      } else return { ticket: null, msg: 'There are no products in the cart'};
+
       if(totalAmount > 0) {
         const newTicket = await this.dao.create({
           code: uuidv4(),
@@ -42,8 +43,8 @@ export default class TicketService extends Services {
           purchaser: user.email,
         });
         await cartDao.deleteAllProductsFromCart(user.cart);
-        return { newTicket, productsOutOfCart };
-      } else return { newTicket: null, productsOutOfCart };
+        return { ticket: newTicket, productsOutOfCart };
+      } else return { ticket: null, productsOutOfCart };
      
     } catch (error) {
       throw new Error(error);
