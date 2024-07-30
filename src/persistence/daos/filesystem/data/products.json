@@ -6,7 +6,7 @@
         "code": "IPad109",
         "price": 895,
         "status": false,
-        "stock": 22,
+        "stock": 19,
         "category": "Tablet",
         "thumbnails": [
             "IPad109_01.jpg",
@@ -20,7 +20,7 @@
         "code": "SGXS9",
         "price": 1148,
         "status": true,
-        "stock": 35,
+        "stock": 32,
         "category": "Tablet",
         "thumbnails": [
             "SGXS9_01.jpg",
@@ -34,7 +34,7 @@
         "code": "LNV4",
         "price": 256,
         "status": true,
-        "stock": 27,
+        "stock": 1,
         "category": "Tablet",
         "thumbnails": [
             "LNV4_01.jpg",
@@ -90,7 +90,7 @@
         "code": "HD320F",
         "price": 668,
         "status": true,
-        "stock": 45,
+        "stock": 44,
         "category": "Helad-Freezer",
         "thumbnails": [
             "HD320F_01.jpg",
@@ -104,7 +104,7 @@
         "code": "LAGad320",
         "price": 46,
         "status": true,
-        "stock": 254,
+        "stock": 253,
         "category": "Iluminacion",
         "thumbnails": [
             "LAGad320_01.jpg",

@@ -18,7 +18,7 @@ export default class TicketService extends Services {
       const cart = await cartDao.getById(cartId);
       if (!cart) return null;
       let totalAmount = 0;
-      let productsOut = [];
+      let productsOutOfCart = [];
       if (cart.products.length > 0) {
         for (const prodInCart of cart.products) {
           const prodId = prodInCart.product;
@@ -30,7 +30,7 @@ export default class TicketService extends Services {
             product.stock = product.stock - prodInCart.quantity;
             await productDao.update(prodId, product);
           } else {
-            productsOut.push(product.id);
+            productsOutOfCart.push(product.id);
           }
         }
       }
@@ -42,8 +42,8 @@ export default class TicketService extends Services {
           purchaser: user.email,
         });
         await cartDao.deleteAllProductsFromCart(user.cart);
-        return { newTicket, productsOut };
-      } else return { newTicket: null, productsOut };
+        return { newTicket, productsOutOfCart };
+      } else return { newTicket: null, productsOutOfCart };
      
     } catch (error) {
       throw new Error(error);

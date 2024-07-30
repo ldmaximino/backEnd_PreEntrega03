@@ -22,6 +22,7 @@ export default class UserDaoFS extends FSDao {
 
   async register(obj) {
     try {
+      console.log('');
       const item = { id: uuidv4(), ...obj };
       const itemsFile = await this.getAll();
       itemsFile.push(item);
