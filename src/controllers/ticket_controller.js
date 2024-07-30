@@ -12,8 +12,8 @@ export default class TicketController extends Controllers {
     async createTicket(req, res, next) {
         try {
             const ticket = await ticketService.createTicket(req.user);
-            if(!ticket)  return res.status(404).json({ msg: "Ticket not created" });
-            return res.status(200).json(ticket);
+            if(!ticket.newTicket) return res.status(404).json({ msg: "Ticket not created", productsOutOfCart: ticket.productsOutOfCart });
+            return res.status(200).json({ ticket: ticket.newTicket, productsOutOfCart: ticket.productsOutOfCart });
         } catch (error) {
             next(error);
         }
