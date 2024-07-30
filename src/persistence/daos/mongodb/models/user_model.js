@@ -1,5 +1,7 @@
 import { Schema, model } from "mongoose";
 
+export const userCollectionName = "user";
+
 const UserSchema = new Schema({
   first_name: {
     type: String,
@@ -33,4 +35,4 @@ const UserSchema = new Schema({
   }
 });
 
-export const UserModel = model("users", UserSchema);
+export const UserModel = model(userCollectionName, UserSchema);

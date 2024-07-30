@@ -10,7 +10,6 @@ export default class UserRepository {
     async getUserById(id) {
         try {
           const user = await this.dao.getUserById(id);
-          console.log('user:',user);
           return new UserDTO(user);
         } catch (error) {
           throw new Error(error);
